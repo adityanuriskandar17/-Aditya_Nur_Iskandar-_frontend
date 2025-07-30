@@ -67,7 +67,7 @@ const EditBooking = () => {
         }
 
         try{
-            await axios.put(`http://localhost:5000/meeting-bookings/${id}`, {
+            await axios.put(`/api/meeting-bookings/${id}`, {
                 unit,
                 roomNumber,
                 roomCapacity: parseInt(roomCapacity),
@@ -87,7 +87,7 @@ const EditBooking = () => {
 
     const getBookingById = async (id) => {
         try{
-            const response = await axios.get(`http://localhost:5000/meeting-bookings/${id}`);
+            const response = await axios.get(`/api/meeting-bookings/${id}`);
             const booking = response.data
             setUnit(booking.unit)
             setRoomNumber(booking.roomNumber)

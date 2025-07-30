@@ -62,7 +62,7 @@ const AddBooking = () => {
         }
 
         try{
-            await axios.post('http://localhost:5000/meeting-bookings', {
+            await axios.post('/api/meeting-bookings', {
                 unit,
                 roomNumber,
                 roomCapacity: parseInt(roomCapacity),

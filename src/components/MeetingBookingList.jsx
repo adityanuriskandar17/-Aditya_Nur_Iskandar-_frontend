@@ -16,7 +16,7 @@ const MeetingBookingList = () => {
 
     const getBookings = async () => {
         try{
-            const response = await axios.get('http://localhost:5000/meeting-bookings');
+            const response = await axios.get('/api/meeting-bookings');
             setBookings(response.data)
             setTotalPages(Math.ceil(response.data.length / 10))
         }catch(error){
@@ -27,7 +27,7 @@ const MeetingBookingList = () => {
 
     const getBookingsByDate = async (date) => {
         try{
-            const response = await axios.get(`http://localhost:5000/meeting-bookings/date/${date}`);
+            const response = await axios.get(`/api/meeting-bookings/date/${date}`);
             setBookings(response.data)
         }catch(error){
             console.error('Error Message: ',error.message);
@@ -37,7 +37,7 @@ const MeetingBookingList = () => {
 
     const getBookingsByUnit = async (unit) => {
         try{
-            const response = await axios.get(`http://localhost:5000/meeting-bookings/unit/${unit}`);
+            const response = await axios.get(`/api/meeting-bookings/unit/${unit}`);
             setBookings(response.data)
         }catch(error){
             console.error('Error Message: ',error.message);
@@ -47,7 +47,7 @@ const MeetingBookingList = () => {
 
     const deleteBooking = async (id) => {
         try{
-            await axios.delete(`http://localhost:5000/meeting-bookings/${id}`);
+            await axios.delete(`/api/meeting-bookings/${id}`);
             getBookings()
         }catch(error){
             console.error('Error Message: ', error.message);

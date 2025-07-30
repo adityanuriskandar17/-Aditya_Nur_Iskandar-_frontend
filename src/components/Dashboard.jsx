@@ -17,7 +17,7 @@ const Dashboard = () => {
 
     const getBookings = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/meeting-bookings')
+            const response = await axios.get('/api/meeting-bookings')
             const allBookings = response.data
             setBookings(allBookings)
             calculateStats(allBookings)
